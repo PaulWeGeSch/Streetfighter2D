@@ -128,7 +128,114 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
   m_PrefabInstance: {fileID: 938282075}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &13058757
+--- !u!61 &13058761
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13058753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.043663025, y: -0.4048711}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.5, y: 4.8125}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0857887, y: 1.5179217}
+  m_EdgeRadius: 0
+--- !u!50 &13058762
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13058753}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &13058763
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13058753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01761508, y: -1.1361918}
+  serializedVersion: 2
+  m_Radius: 0.528425
+--- !u!114 &13058764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,9 +244,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 13058753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a0eccfeb706ad4b85d18956edb1108, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 8f2f6e685ef8db240ac7b0323547c9a0, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 73f6d3d6-4786-446f-bbe9-08384d6faa91
+    m_ActionName: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: WASD
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &177501796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4985,7 +5114,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8430552516475355892, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8430552516475355892, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       propertyPath: m_SortingLayerID
@@ -5001,7 +5130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8430552516475355893, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3622713
+      value: -2.25
       objectReference: {fileID: 0}
     - target: {fileID: 8430552516475355893, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5044,8 +5173,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 13058764}
+    - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 13058757}
+      addedObject: {fileID: 13058761}
+    - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 13058763}
+    - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 13058762}
   m_SourcePrefab: {fileID: 100100000, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
 --- !u!1 &1361105980
 GameObject:
