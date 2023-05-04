@@ -1,14 +1,14 @@
 {
-    "name": "ControllManager",
+    "name": "PlayerInput",
     "maps": [
         {
             "name": "Player",
-            "id": "5f4a8ab4-195e-455a-ab58-eb00aeae411f",
+            "id": "2bd5a5d9-9969-4d61-8b62-ec9a714309cf",
             "actions": [
                 {
-                    "name": "Movement",
+                    "name": "Move",
                     "type": "PassThrough",
-                    "id": "73f6d3d6-4786-446f-bbe9-08384d6faa91",
+                    "id": "c2a36288-4993-4701-b760-dfd55fb7a724",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -17,140 +17,117 @@
             ],
             "bindings": [
                 {
-                    "name": "2D Vector",
-                    "id": "04d51785-c19b-465d-abd2-cf341350136d",
+                    "name": "WASD",
+                    "id": "d395338a-82c0-40b0-b219-e07cb28516f7",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "d9ae852b-56ba-43a3-8db6-5a208af43b27",
-                    "path": "<Keyboard>/#(W)",
+                    "id": "f9de2652-4261-4b2d-907e-8c0b9968243b",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
-                    "action": "Movement",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "65ea23c6-17cb-448b-bd3a-a5f8d1936258",
-                    "path": "<Keyboard>/#(S)",
+                    "id": "d8ddd3b9-7639-4aa3-b046-7f198b8ac55a",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
-                    "action": "Movement",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "85b69375-32b0-487c-90e4-2843da11ea5d",
+                    "id": "026ebbea-d537-42f9-be7c-baad622f89a3",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
-                    "action": "Movement",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "ec6e5ed4-4e9c-40c7-9b47-b377c8a9a072",
+                    "id": "5025c651-3409-4be6-a23b-70480c1685b4",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "WASD",
-                    "action": "Movement",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector Pfeil",
-                    "id": "895e4bde-4527-4825-93a6-d85a544f92cd",
+                    "name": "Pfeil",
+                    "id": "69cde30b-09c6-4355-85a9-f97b6ef0fcef",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "6e578219-f987-4f40-b781-bd04221d354a",
+                    "id": "fe0f7832-3307-49ad-a0c9-5ad74d623d15",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pfeil",
-                    "action": "Movement",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "f747ba32-dc06-4a7f-a8b1-2cbd85789330",
+                    "id": "7e555db0-730d-47ab-81c3-dddea03f343f",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pfeil",
-                    "action": "Movement",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "7c39cb2a-8fd4-4296-8f52-5c5badcf01ec",
+                    "id": "719c1d6f-5a66-4730-913f-f71f8aa7ab0a",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pfeil",
-                    "action": "Movement",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "4dc398bf-fd28-45fe-9bea-04831fe96fbd",
+                    "id": "7f96d7a6-9df7-4e5a-b6f2-1f741b101c1c",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Pfeil",
-                    "action": "Movement",
+                    "groups": "",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "WASD",
-            "bindingGroup": "WASD",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "Pfeil",
-            "bindingGroup": "Pfeil",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        }
-    ]
+    "controlSchemes": []
 }
