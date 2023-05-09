@@ -11,6 +11,7 @@ public class NinjaMovement : MonoBehaviour
     public float JumpForce = 1;
 
     public Rigidbody2D rb;
+    public GameObject GroundCheck;
     Vector2 moveDirection = Vector2.zero;
 
     public PlayerInput playerMovement;
@@ -35,20 +36,29 @@ public class NinjaMovement : MonoBehaviour
        rb = GetComponent<Rigidbody2D>();
     }
 
+    OnCollisionEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Ground") && //get key down
+    }
+
     void Update()
 
     {
         moveDirection = move.ReadValue<Vector2>();
 
+        /**
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
+        **/
 
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveDirection.x * MovementSpeed, moveDirection.y * MovementSpeed);
+        rb.velocity = new Vector2(moveDirection.x * MovementSpeed, 0);
+
+        
     }
 
 }
