@@ -2,11 +2,11 @@
     "name": "PlayerInput",
     "maps": [
         {
-            "name": "Player",
+            "name": "Ninja",
             "id": "2bd5a5d9-9969-4d61-8b62-ec9a714309cf",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "MoveNinja",
                     "type": "PassThrough",
                     "id": "c2a36288-4993-4701-b760-dfd55fb7a724",
                     "expectedControlType": "Vector2",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveNinja",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -34,7 +34,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveNinja",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -45,7 +45,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveNinja",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -56,7 +56,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveNinja",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -67,62 +67,79 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveNinja",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
+                }
+            ]
+        },
+        {
+            "name": "Ronin",
+            "id": "9ad52e28-cccd-459e-8c21-a2417680a83a",
+            "actions": [
                 {
-                    "name": "Pfeil",
-                    "id": "69cde30b-09c6-4355-85a9-f97b6ef0fcef",
+                    "name": "MoveRonin",
+                    "type": "PassThrough",
+                    "id": "42c16ef0-c699-46b9-b26c-fabb03ea924c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Pfeile",
+                    "id": "473d9eb6-af7f-4b4a-b153-171e48ba8ed5",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveRonin",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "fe0f7832-3307-49ad-a0c9-5ad74d623d15",
+                    "id": "3e4304a9-1a24-4d49-a35c-b3e330d188b4",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveRonin",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "7e555db0-730d-47ab-81c3-dddea03f343f",
+                    "id": "d50649b6-1233-41ae-8eab-0f4af7b01cb7",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveRonin",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "719c1d6f-5a66-4730-913f-f71f8aa7ab0a",
+                    "id": "6cacde5a-f2f3-4026-926a-bc555e1105c6",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveRonin",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "7f96d7a6-9df7-4e5a-b6f2-1f741b101c1c",
+                    "id": "98341311-b9a0-421f-b12d-1f76e43e4e56",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveRonin",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
