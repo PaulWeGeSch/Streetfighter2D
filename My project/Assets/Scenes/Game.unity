@@ -248,14 +248,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
-  JumpForce: 100
-  isGrounded: 0
-  groundcheckCollider: {fileID: 269097096}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
+  JumpForce: 200
+  groundCheck: {fileID: 0}
   rb: {fileID: 13058762}
-  GroundCheck: {fileID: 269097095}
 --- !u!114 &13058765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +306,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8430552516475355893, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
   m_PrefabInstance: {fileID: 938282075}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &13058771
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13058753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.023765564, y: -1.1885548}
+  serializedVersion: 2
+  m_Radius: 0.54388523
 --- !u!1001 &177501796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5256,6 +5286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ninja
       objectReference: {fileID: 0}
+    - target: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
+      propertyPath: m_TagString
+      value: Ninja
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -5269,6 +5303,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 13058763}
+    - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 13058771}
     - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 13058762}
@@ -5493,6 +5530,7 @@ GameObject:
   - component: {fileID: 1964618816}
   - component: {fileID: 1964618819}
   - component: {fileID: 1964618818}
+  - component: {fileID: 1964618820}
   m_Layer: 3
   m_Name: Ground Grid
   m_TagString: Untagged
@@ -5686,3 +5724,15 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1964618820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964618815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76db81a4852eae74e9a17a0dd1759ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
