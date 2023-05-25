@@ -248,7 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
-  JumpForce: 200
+  JumpForce: 20
+  animator: {fileID: 13058772}
   groundCheck: {fileID: 0}
   rb: {fileID: 13058762}
 --- !u!114 &13058765
@@ -341,6 +342,11 @@ CircleCollider2D:
   m_Offset: {x: -0.023765564, y: -1.1885548}
   serializedVersion: 2
   m_Radius: 0.54388523
+--- !u!95 &13058772 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8430552516475355895, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
+  m_PrefabInstance: {fileID: 938282075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &177501796
 PrefabInstance:
   m_ObjectHideFlags: 0
