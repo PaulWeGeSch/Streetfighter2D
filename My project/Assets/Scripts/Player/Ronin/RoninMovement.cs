@@ -9,9 +9,12 @@ public class RoninMovement : MonoBehaviour
 {
     public float MovementSpeed = 1;
     public float JumpForce = 1;
+    bool m_FacingRight = false;
 
     public Rigidbody2D rb;
     Vector2 moveDirection = Vector2.zero;
+
+    public Animator animator;
 
     public PlayerInput playerMovement;
     private InputAction move;
@@ -40,6 +43,27 @@ public class RoninMovement : MonoBehaviour
     {
         moveDirection = move.ReadValue<Vector2>();
 
+        if (moveDirection.x > 0.01)  // Frägt Geschwindigkeit ab, wenn sich Ronin bewegt startet die Run-Animation 
+        {
+            animator.SetBool("Run", true);
+
+            if (!m_FacingRight) Flip();
+        }
+        else
+        {
+            if (moveDirection.x < -0.01)
+            {
+                animator.SetBool("Run", true);
+
+                if (m_FacingRight) Flip();
+            }
+            else
+            {
+                animator.SetBool("Run", false);
+            }
+        }
+
+
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
@@ -49,6 +73,15 @@ public class RoninMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * MovementSpeed, moveDirection.y * MovementSpeed);
+    }
+
+    private void Flip()
+    {
+        m_FacingRight = !m_FacingRight;
+
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 
 }

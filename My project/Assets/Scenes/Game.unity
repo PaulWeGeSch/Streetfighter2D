@@ -5417,6 +5417,7 @@ MonoBehaviour:
   MovementSpeed: 10
   JumpForce: 10
   rb: {fileID: 1788085764}
+  animator: {fileID: 1788085767}
 --- !u!50 &1788085764
 Rigidbody2D:
   serializedVersion: 4
@@ -5524,6 +5525,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.078568, y: 1.5827103}
   m_EdgeRadius: 0
+--- !u!95 &1788085767 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1828010354038750734, guid: a977e2dbf9d56c8479d7a9f08dddf419, type: 3}
+  m_PrefabInstance: {fileID: 689064153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1964618815
 GameObject:
   m_ObjectHideFlags: 0
