@@ -21,4 +21,11 @@ public class GroundCheckNinja : MonoBehaviour
 
         if (collider.gameObject.CompareTag("Ronin")) groundCheckRonin = false;
     }
+
+    /**
+    private void Update()
+    {
+        Debug.Log(groundCheckNinja);
+    }
+    **/
 }

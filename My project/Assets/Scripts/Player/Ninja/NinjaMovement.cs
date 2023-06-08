@@ -8,7 +8,7 @@ public class NinjaMovement : MonoBehaviour
 
 {
     public float MovementSpeed = 1;
-    public float JumpForce = 1;
+    public float JumpForce = 10;
     bool m_FacingRight = true;
     float yDirection;
 
@@ -74,17 +74,16 @@ public class NinjaMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveDirection.x * MovementSpeed, 0);
+            rb.velocity = new Vector2(moveDirection.x * MovementSpeed, 0);
 
         if (GroundCheckNinja.groundCheckNinja == true && Input.GetKeyDown("w"))
         {
-                                                              //moveDirection.y wird nicht ausgeslesen. Ist immer 0
-            rb.velocity = new Vector2(0, yDirection * JumpForce);                 // + 10 den Wert für Animationstest
+            //moveDirection.y wird nicht ausgeslesen. Ist immer 0
+            rb.AddForce(transform.up * JumpForce, ForceMode2D.Impulse);               // + 10 den Wert für Animationstest
 
             Debug.Log("springt");
         }
-        yDirection = moveDirection.y;
-        Debug.Log(moveDirection.y);
+        //Debug.Log(moveDirection.y);
     }
 
     private void Flip()
