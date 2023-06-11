@@ -69,19 +69,18 @@ public class NinjaMovement : MonoBehaviour
                 animator.SetBool("Run", false);
             }
         }
-        //Debug.Log(GroundCheckNinja.groundCheckNinja);
+        Debug.Log(GroundCheckNinja.groundCheckNinja);
 
     }
     private void FixedUpdate()
     {
-            rb.velocity = new Vector2(moveDirection.x * MovementSpeed, 0);
+        rb.velocity = new Vector2(moveDirection.x * MovementSpeed, 0);
 
-        if (GroundCheckNinja.groundCheckNinja == true && Input.GetKeyDown("w"))
+        if (GroundCheckNinja.groundCheckNinja == true && Input.GetKeyDown(KeyCode.W))
         {
+            Debug.Log("springt");
             //moveDirection.y wird nicht ausgeslesen. Ist immer 0
             rb.AddForce(transform.up * JumpForce, ForceMode2D.Impulse);               // + 10 den Wert für Animationstest
-
-            Debug.Log("springt");
         }
         //Debug.Log(moveDirection.y);
     }

@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
-  JumpForce: 100
+  JumpForce: 200
   animator: {fileID: 13058772}
   groundCheck: {fileID: 0}
   rb: {fileID: 13058762}
@@ -307,41 +307,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8430552516475355893, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
   m_PrefabInstance: {fileID: 938282075}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &13058771
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13058753}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.023765564, y: -1.1885548}
-  serializedVersion: 2
-  m_Radius: 0.54388523
 --- !u!95 &13058772 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8430552516475355895, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
@@ -5309,9 +5274,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 13058763}
-    - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 13058771}
     - targetCorrespondingSourceObject: {fileID: 8430552516475355894, guid: 3259b1ac9ed5e0c44a80abbd3dfe44ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 13058762}

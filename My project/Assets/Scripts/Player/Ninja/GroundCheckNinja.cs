@@ -7,20 +7,19 @@ public class GroundCheckNinja : MonoBehaviour
     public static bool groundCheckNinja = false;
     public static bool groundCheckRonin = false;
 
-
-    public void OnTriggerEnter2D(Collider2D collider)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collider.gameObject.CompareTag("Ninja")) groundCheckNinja = true;
+        if (collision.gameObject.CompareTag("Ninja")) groundCheckNinja = true;
 
-        if (collider.gameObject.CompareTag("Ronin")) groundCheckRonin = true;
+        if (collision.gameObject.CompareTag("Ronin")) groundCheckRonin = true;
     }
-
-    public void OnTriggerExit2D(Collider2D collider)
+    public void OnCollisionExit2D(Collision2D collision)
     {
-        if (collider.gameObject.CompareTag("Ninja")) groundCheckNinja = false;
+        if (collision.gameObject.CompareTag("Ninja")) groundCheckNinja = false;
 
-        if (collider.gameObject.CompareTag("Ronin")) groundCheckRonin = false;
+        if (collision.gameObject.CompareTag("Ronin")) groundCheckRonin = false;
     }
+   
 
     /**
     private void Update()
