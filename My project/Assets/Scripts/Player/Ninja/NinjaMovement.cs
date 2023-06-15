@@ -69,19 +69,42 @@ public class NinjaMovement : MonoBehaviour
                 animator.SetBool("Run", false);
             }
         }
-        Debug.Log(GroundCheckNinja.groundCheckNinja);
+
+        if (GroundCheckNinja.groundCheckNinja == false && (animator.GetInteger("Airstate") == 0))                // Wenn Ninja in der Luft fällt er
+        {
+            animator.SetInteger("Airstate", 2);
+        }
+
+        if (GroundCheckNinja.groundCheckNinja == false && (animator.GetInteger("Airstate") == 1))                 // Wenn Ninja in der Luft schaut ob er springt dann verzögert fällt er
+        {
+           // Timer muss irgendwie rein für eine Sekunde
+            animator.SetInteger("Airstate", 2);
+        }
+
+
+        if (GroundCheckNinja.groundCheckNinja == true)                  // Wenn Ninja auf dem Boden State "0"
+        {
+            animator.SetInteger("Airstate", 0);
+        }
+
+        if (GroundCheckNinja.groundCheckNinja == true && Input.GetKeyDown(KeyCode.W))
+        {
+            Debug.Log("springt");
+            //moveDirection.y wird nicht ausgeslesen. Ist immer 0
+            //rb.AddForce(transform.up * JumpForce, ForceMode2D.Impulse);  // + 10 den Wert für Animationstest
+
+            rb.velocity = new Vector2(0 , moveDirection.y * JumpForce);
+
+            animator.SetInteger("Airstate", 1);                        // Wenn Ninja springt startet Springanimation
+            Debug.Log("Animiert");
+        }
 
     }
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * MovementSpeed, 0);
 
-        if (GroundCheckNinja.groundCheckNinja == true && Input.GetKeyDown(KeyCode.W))
-        {
-            Debug.Log("springt");
-            //moveDirection.y wird nicht ausgeslesen. Ist immer 0
-            rb.AddForce(transform.up * JumpForce, ForceMode2D.Impulse);               // + 10 den Wert für Animationstest
-        }
+       
         //Debug.Log(moveDirection.y);
     }
 
