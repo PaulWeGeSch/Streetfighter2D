@@ -1,9 +1,0 @@
-To DO:
-
-- Spieler Code
-	- Leben (Paul)
-	- Angriffe 
-	- Movement (Paul)
-- Spieleranimationen (Lukas)
-
-(- Matheaufgabe vor Spielstart)
