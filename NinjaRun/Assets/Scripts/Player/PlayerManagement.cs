@@ -6,18 +6,39 @@ using UnityEngine.SceneManagement;
 public class PlayerManagement : MonoBehaviour
 {
     public GameObject looserScreen;
+    public GameObject winnerScreen;
+
+    private void Start()
+    {
+        FireWall.fireWallBool = false;
+        Time.timeScale = 1f;
+    }
+
+    private void Update()
+    {
+        if (FireWall.fireWallBool == true) Death();
+
+        if (Pokal.finished == true) Finished();
+    }
+
 
     public void Death()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; //Setzt Zeit auf Null -> Man kann sich nicht mehr bewegen
         looserScreen.SetActive(true);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void Finished ()
     {
-        if (collision.gameObject.CompareTag("FireWall"))
-        {
-            Debug.Log("DEATH");
-            Death();
-        }
+        Time.timeScale = 0f; //Setzt Zeit auf Null -> Man kann sich nicht mehr bewegen
+        winnerScreen.SetActive(true);
+        StartCoroutine(waiter());
+    }
+
+    IEnumerator waiter() //Erzeugung des Waiters
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        LevelAccess.level = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(0);
     }
 }
