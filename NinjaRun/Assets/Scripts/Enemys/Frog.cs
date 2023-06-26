@@ -5,7 +5,7 @@ using UnityEngine;
 public class Frog : MonoBehaviour
 {
     public float speed;
-    private int direction = 1;
+    public int direction = 1;
 
     public GameObject frog;
 

@@ -12,6 +12,7 @@ public class PlayerManagement : MonoBehaviour
     {
         FireWall.fireWallBool = false;
         Time.timeScale = 1f;
+        looserScreen.SetActive(false);
     }
 
     private void Update()
