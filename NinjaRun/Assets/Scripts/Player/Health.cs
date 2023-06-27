@@ -9,6 +9,11 @@ public class Health : MonoBehaviour
 
     public PlayerManagement pm; //Referenz zum PlayerManagment Script; Man muss das Objekt mit dem Passendem Script in das Feld vom Inspektor ziehen
     public Frog frog;
+    public float KbSpeed;
+
+    public Rigidbody2D rb;
+
+    public Frog f;
 
     //Updates jeden Frame
     private void Update()
@@ -26,8 +31,8 @@ public class Health : MonoBehaviour
         //Wenn der Spieler einen Frosch berührt soll ihm Leben abgezogen werden und der Frosch soll sich vom Spieler wegdrehen
         if (collision.gameObject.CompareTag("Frog"))
         {
-            playerHealth = playerHealth - 20;
-            frog.direction = frog.direction * -1;
+            playerHealth = playerHealth - 20f;
+            f.direction = f.direction * -1;
         }
         //Wenn der Spieler den Kopf eines Frosches berührt dann soll der Frosch zerstört werden
         if (collision.gameObject.CompareTag("FrogHead"))
