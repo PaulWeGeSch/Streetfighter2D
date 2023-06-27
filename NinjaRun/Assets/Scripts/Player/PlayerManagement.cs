@@ -11,13 +11,18 @@ public class PlayerManagement : MonoBehaviour
     private void Start()
     {
         FireWall.fireWallBool = false;
+        DeathGround.deathGround = false;
         Time.timeScale = 1f;
         looserScreen.SetActive(false);
+        Pokal.finished = false;
+        winnerScreen.SetActive(false);
     }
 
     private void Update()
     {
         if (FireWall.fireWallBool == true) Death();
+
+        if (DeathGround.deathGround == true) Death();
 
         if (Pokal.finished == true) Finished();
     }

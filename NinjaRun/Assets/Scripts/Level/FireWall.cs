@@ -17,7 +17,6 @@ public class FireWall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("DEATH");
             fireWallBool= true;
         }
     }

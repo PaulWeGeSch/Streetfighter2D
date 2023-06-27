@@ -450,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1791511847762543707, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
       propertyPath: direction
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1791511847762543711, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
       propertyPath: m_RootOrder
@@ -458,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1791511847762543711, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.345455
+      value: 16.8
       objectReference: {fileID: 0}
     - target: {fileID: 1791511847762543711, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -983,7 +983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &637299524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1493,7 +1493,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2564125, y: -0.17949009}
+  m_Offset: {x: 0.28501892, y: -0.17949009}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1504,7 +1504,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.487175, y: 4.7436457}
+  m_Size: {x: 0.42996216, y: 4.7436457}
   m_EdgeRadius: 0
 --- !u!1 &883402909
 GameObject:
@@ -2547,13 +2547,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1791511847762543707, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1791511847762543711, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1791511847762543711, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.9
+      value: 48.1
       objectReference: {fileID: 0}
     - target: {fileID: 1791511847762543711, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
       propertyPath: m_LocalPosition.y
