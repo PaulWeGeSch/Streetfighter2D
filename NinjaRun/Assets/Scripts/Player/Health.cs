@@ -35,10 +35,5 @@ public class Health : MonoBehaviour
             playerHealth = playerHealth - 20f;
             f.direction = f.direction * -1;
         }
-        //Wenn der Spieler den Kopf eines Frosches berührt dann soll der Frosch zerstört werden
-        if (collision.gameObject.CompareTag("FrogHead"))
-        {
-            Destroy(collision.gameObject);
-        }
     }
 }
