@@ -10,6 +10,7 @@ public class PlayerManagement : MonoBehaviour
 
     private void Start()
     {
+        Health.playerHealth = 100f;
         FireWall.fireWallBool = false;
         DeathGround.deathGround = false;
         Time.timeScale = 1f;

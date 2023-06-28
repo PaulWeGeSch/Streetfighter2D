@@ -23,6 +23,7 @@ public class Health : MonoBehaviour
         {
             pm.Death();
         }
+        Debug.Log(playerHealth);
     }
 
     //Funktion wird gecalled wenn das Objekt ein anderes berührt
