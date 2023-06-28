@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Movment : MonoBehaviour
 {
     static public Vector2 move;
     public int speed;
+    public Animator animator;
 
     //public Animator animator;
 
@@ -20,13 +22,21 @@ public class Movment : MonoBehaviour
     {
         
         move = new Vector2(1, Input.GetAxisRaw("Vertical")); 
-        //animator.SetFloat("speed", Mathf.Abs(move.x)); //lauf Animationen
-       
-        transform.Translate(move * speed * Time.deltaTime);
+        animator.SetFloat("speed", Mathf.Abs(move.x)); //lauf Animationen
+
+        if (move.x > 0.01)  // Frägt Geschwindigkeit ab, wenn sich Ninja bewegt startet die Run-Animation 
+        {
+            animator.SetBool("Run", true);
+        }
+        else
+        {
+            animator.SetBool("Run", false);
+        }
+
+            transform.Translate(move * speed * Time.deltaTime);
 
     }
 
-    //Spiegelt den Spieler achsensymetrisch zur mittleren X-Achse wenn er nach links/rechts läuft
     
     /**
      void OnTriggerEnter2D(Collider2D other)
