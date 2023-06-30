@@ -23,7 +23,7 @@ public class Jump : MonoBehaviour
     float jumpCounter;
     [SerializeField] bool isGrounded;
 
-    //public Animator animator;
+    public Animator animator;
     void Start()
     {
         vecGravity = new Vector2(0, -Physics2D.gravity.y);
@@ -33,7 +33,7 @@ public class Jump : MonoBehaviour
     void FixedUpdate()
     {
         
-        
+
         //springt ab
         if (Input.GetButtonDown("Jump") && isGrounded == true) 
         {
@@ -42,13 +42,13 @@ public class Jump : MonoBehaviour
             isJumping = true;
             jumpCounter = 0;
             Debug.Log("j");
-            
+
         }
 
         //Bewegung nach oben
         if (rb.velocity.y > 0 && isJumping) 
         {
-           
+            
             jumpCounter += Time.deltaTime;
             if (jumpCounter > jumpTime) isJumping = false;
 
@@ -61,7 +61,15 @@ public class Jump : MonoBehaviour
             }
 
             rb.velocity += vecGravity * currentJumpM * Time.deltaTime;
+
+            //Animation Springen
             
+            if (animator.GetInteger("Airstate") == 0)                // Wenn Ninja in der Luft fällt er
+            {
+                animator.SetInteger("Airstate", 1);
+                Debug.Log("Animiert Absprung");
+            }
+
         }
 
         //lässt springen los
@@ -81,6 +89,15 @@ public class Jump : MonoBehaviour
         if (rb.velocity.y < 0) 
         {
             rb.velocity -= vecGravity * fallMultiplier * Time.fixedDeltaTime;
+
+            //Animation Fallen
+
+            if (animator.GetInteger("Airstate") == 1)                 // Wenn Ninja in der Luft, schaut ob er springt, dann verzögert fällt er
+            {
+                animator.SetInteger("Airstate", 2);
+                Debug.Log("Animiert Fallen");
+            }
+
         }
        
     }

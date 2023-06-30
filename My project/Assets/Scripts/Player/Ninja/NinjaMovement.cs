@@ -68,6 +68,7 @@ public class NinjaMovement : MonoBehaviour
             {
                 animator.SetBool("Run", false);
             }
+
         }
 
         if (GroundCheckNinja.groundCheckNinja == false && (animator.GetInteger("Airstate") == 0))                // Wenn Ninja in der Luft fällt er
@@ -75,7 +76,7 @@ public class NinjaMovement : MonoBehaviour
             animator.SetInteger("Airstate", 2);
         }
 
-        if (GroundCheckNinja.groundCheckNinja == false && (animator.GetInteger("Airstate") == 1))                 // Wenn Ninja in der Luft schaut ob er springt dann verzögert fällt er
+        if (GroundCheckNinja.groundCheckNinja == false && (animator.GetInteger("Airstate") == 1))                 // Wenn Ninja in der Luft, schaut ob er springt, dann verzögert fällt er
         {
            // Timer muss irgendwie rein für eine Sekunde
             animator.SetInteger("Airstate", 2);

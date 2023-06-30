@@ -22912,6 +22912,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   isGrounded: 0
+  animator: {fileID: 1578632438}
 --- !u!114 &1578632433
 MonoBehaviour:
   m_ObjectHideFlags: 0
