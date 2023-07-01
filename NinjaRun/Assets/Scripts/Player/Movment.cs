@@ -35,6 +35,8 @@ public class Movment : MonoBehaviour
 
             transform.Translate(move * speed * Time.deltaTime);
 
+        
+
     }
 
     

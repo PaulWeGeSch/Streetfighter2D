@@ -32,7 +32,12 @@ public class Jump : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        // Animation wieder auf dem Boden / hebt gerade nicht ab
+       /* if (isGrounded == true)
+        {
+            animator.SetInteger("Airstate", 0); //Rennen
+            Debug.Log("wieder auf dem Boden");
+        }*/
 
         //springt ab
         if (Input.GetButtonDown("Jump") && isGrounded == true) 
@@ -64,17 +69,18 @@ public class Jump : MonoBehaviour
 
             //Animation Springen
             
-            if (animator.GetInteger("Airstate") == 0)                // Wenn Ninja in der Luft fällt er
+            /*if (animator.GetInteger("Airstate") == 0)                // Wenn Ninja in der Luft fällt er
             {
                 animator.SetInteger("Airstate", 1);
                 Debug.Log("Animiert Absprung");
-            }
+            }*/
 
         }
 
         //lässt springen los
         if (Input.GetButtonUp("Jump")) 
         {
+            
             isJumping = false;
             jumpCounter = 0;
 
@@ -89,14 +95,14 @@ public class Jump : MonoBehaviour
         if (rb.velocity.y < 0) 
         {
             rb.velocity -= vecGravity * fallMultiplier * Time.fixedDeltaTime;
-
+           
             //Animation Fallen
 
-            if (animator.GetInteger("Airstate") == 1)                 // Wenn Ninja in der Luft, schaut ob er springt, dann verzögert fällt er
-            {
+            /*if (animator.GetInteger("Airstate") == 1)                 // Wenn Ninja in der Luft, schaut ob er springt, dann verzögert fällt er
+           {
                 animator.SetInteger("Airstate", 2);
                 Debug.Log("Animiert Fallen");
-            }
+           }*/
 
         }
        
@@ -105,20 +111,22 @@ public class Jump : MonoBehaviour
     //Update() übernimmt animationen
     private void Update()
     {
+        
         Groundcheck();
         if (isGrounded == false)
         {
             //animator.SetBool("jump", true);
-            //if (Movment.move.y > 0) animator.SetFloat("yVelocity", 1);
+            if (rb.velocity.y > 0) animator.SetInteger("Airstate", 1); //hebt ab
             
-            //else animator.SetFloat("yVelocity", -1);
+            if (rb.velocity.y < 0) animator.SetInteger("Airstate", 2); //fällt
         }
         else
         {
             //animator.SetBool("jump", false);
-            //animator.SetFloat("yVelocity", 0);
+            animator.SetInteger("Airstate", 0);
         }
-           
+        Debug.Log(rb.velocity.y);
+        Debug.Log(Movment.move.y);
     }
     
     //checkt ob er auf dem Boden Steht
