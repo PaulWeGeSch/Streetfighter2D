@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
     public Rigidbody2D rb;
 
     public Frog f;
+    public Image healthbar;
 
     //Updates jeden Frame
     private void Update()
@@ -24,6 +26,7 @@ public class Health : MonoBehaviour
             pm.Death();
         }
         Debug.Log(playerHealth);
+        healthbar.fillAmount = playerHealth / 100f;
     }
 
     //Funktion wird gecalled wenn das Objekt ein anderes berührt

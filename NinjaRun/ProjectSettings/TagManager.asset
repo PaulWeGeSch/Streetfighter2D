@@ -8,6 +8,10 @@ TagManager:
   - Frog
   - FrogHead
   - FrogWall
+  - BlueD
+  - GreenD
+  - PinkD
+  - Text
   layers:
   - Default
   - TransparentFX

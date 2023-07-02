@@ -8,6 +8,8 @@ public class PlayerManagement : MonoBehaviour
     public GameObject looserScreen;
     public GameObject winnerScreen;
 
+    private CoinManager m;
+
     private void Start()
     {
         Health.playerHealth = 100f;
@@ -17,6 +19,8 @@ public class PlayerManagement : MonoBehaviour
         looserScreen.SetActive(false);
         Pokal.finished = false;
         winnerScreen.SetActive(false);
+
+        m = GameObject.FindGameObjectWithTag("Text").GetComponent<CoinManager>();
     }
 
     private void Update()
@@ -26,6 +30,25 @@ public class PlayerManagement : MonoBehaviour
         if (DeathGround.deathGround == true) Death();
 
         if (Pokal.finished == true) Finished();
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("BlueD"))
+        {
+            Destroy(other.gameObject);
+            m.AddBlueD();
+        }
+        if (other.gameObject.CompareTag("GreenD"))
+        {
+            Destroy(other.gameObject);
+            m.AddGreenD();
+        }
+        if (other.gameObject.CompareTag("PinkD"))
+        {
+            Destroy(other.gameObject);
+            m.AddPinkD();
+        }
     }
 
 
