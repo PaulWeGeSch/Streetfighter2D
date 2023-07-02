@@ -22873,10 +22873,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 1578632431}
-  frog: {fileID: 1791511847762543707, guid: 10dfeea66d3ae3740a360c46e773426b, type: 3}
   KbSpeed: 0
   rb: {fileID: 0}
   f: {fileID: 0}
+  healthbar: {fileID: 0}
 --- !u!114 &1578632431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23964,7 +23964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2016183212
 MonoBehaviour:
   m_ObjectHideFlags: 0

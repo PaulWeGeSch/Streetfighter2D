@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Autor: Paul + Lukas(animationen)
+//Autor: Paul + Lukas
 
 public class Jump : MonoBehaviour
 {
@@ -34,15 +34,10 @@ public class Jump : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Animation wieder auf dem Boden / hebt gerade nicht ab
-       /* if (isGrounded == true)
-        {
-            animator.SetInteger("Airstate", 0); //Rennen
-            Debug.Log("wieder auf dem Boden");
-        }*/
+        
 
         //springt ab
-        if (Input.GetButtonDown("Jump") && isGrounded == true) 
+        if (Input.GetButtonDown("Jump") && isGrounded == true)  // Spieler ist auf dem Boden und drückt die Springen-Taste
         {
             
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
@@ -53,7 +48,7 @@ public class Jump : MonoBehaviour
         }
 
         //Bewegung nach oben
-        if (rb.velocity.y > 0 && isJumping) 
+        if (rb.velocity.y > 0 && isJumping)   // Der Spieler bewegt sich gerade nach oben, soll aber nicht unendlich weit fliegen, deshalb wird die Gravitation mit der Zeit erhöht
         {
             
             jumpCounter += Time.deltaTime;
@@ -69,18 +64,10 @@ public class Jump : MonoBehaviour
 
             rb.velocity += vecGravity * currentJumpM * Time.deltaTime;
 
-            //Animation Springen
-            
-            /*if (animator.GetInteger("Airstate") == 0)                // Wenn Ninja in der Luft fällt er
-            {
-                animator.SetInteger("Airstate", 1);
-                Debug.Log("Animiert Absprung");
-            }*/
-
-        }
+                   }
 
         //lässt springen los
-        if (Input.GetButtonUp("Jump")) 
+        if (Input.GetButtonUp("Jump"))  // Spieler erfährt keine Kraft nach oben mehr
         {
             
             isJumping = false;
@@ -93,24 +80,17 @@ public class Jump : MonoBehaviour
             
         }
 
-        //fällt
-        if (rb.velocity.y < 0) 
+        //fällt 
+        if (rb.velocity.y < 0)              // Der Spieler fällt immer schneller
         {
             rb.velocity -= vecGravity * fallMultiplier * Time.fixedDeltaTime;
            
-            //Animation Fallen
-
-            /*if (animator.GetInteger("Airstate") == 1)                 // Wenn Ninja in der Luft, schaut ob er springt, dann verzögert fällt er
-           {
-                animator.SetInteger("Airstate", 2);
-                Debug.Log("Animiert Fallen");
-           }*/
-
+           
         }
        
     }
     
-    //Update() übernimmt animationen
+    //Update() übernimmt Animationen
     private void Update()
     {
         
@@ -118,17 +98,17 @@ public class Jump : MonoBehaviour
         if (isGrounded == false)
         {
             //animator.SetBool("jump", true);
-            if (rb.velocity.y > 0) animator.SetInteger("Airstate", 1); //hebt ab
+            if (Movment.move.y > 0) animator.SetInteger("Airstate", 1); // hebt ab / bewegt sich nach oben (Animation)
             
-            if (rb.velocity.y < 0) animator.SetInteger("Airstate", 2); //fällt
+            if (Movment.move.y <= 0) animator.SetInteger("Airstate", 2); // fällt / bewegt sich nach unten (Animation)
         }
         else
         {
             //animator.SetBool("jump", false);
-            animator.SetInteger("Airstate", 0);
+            animator.SetInteger("Airstate", 0);   // Läuft ganz normal / ist auf dem Boden (Animation)
         }
-        Debug.Log(rb.velocity.y);
-        Debug.Log(Movment.move.y);
+        //Debug.Log(rb.velocity.y);
+        //Debug.Log(Movment.move.y);
     }
     
     //checkt ob er auf dem Boden Steht
