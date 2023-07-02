@@ -4,29 +4,31 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Autor: Paul
+
 public class Health : MonoBehaviour
 {
     public static float playerHealth = 100f;    //Leben des Spielers
 
     public PlayerManagement pm; //Referenz zum PlayerManagment Script; Man muss das Objekt mit dem Passendem Script in das Feld vom Inspektor ziehen
-    public Frog frog;
-    public float KbSpeed;
 
-    public Rigidbody2D rb;
+    public float KbSpeed; //Knockbackspeed bei Kontakt mit Frosch
 
-    public Frog f;
+    public Rigidbody2D rb; //Rigidbody des Spielers
+    public Frog f; //Refernz zum Frosch
+
     public Image healthbar;
 
-    //Updates jeden Frame
+    //Updatetet jeden Frame
     private void Update()
     {
-        //Wenn der Spieler keine Leben mehr hat soll er mit der Death funktion aus Playermanagement sterben
+        //Wenn der Spieler keine Leben mehr hat soll er mit der Death funktion aus Playermanagement ausgeführt werden
         if(playerHealth <= 0)
         {
             pm.Death();
         }
         Debug.Log(playerHealth);
-        healthbar.fillAmount = playerHealth / 100f;
+        healthbar.fillAmount = playerHealth / 100f; //die Health bar soll zu dem Prozentanteil des Lebens des Spielers gefüllt sein
     }
 
     //Funktion wird gecalled wenn das Objekt ein anderes berührt
@@ -36,7 +38,7 @@ public class Health : MonoBehaviour
         if (collision.gameObject.CompareTag("Frog"))
         {
             playerHealth = playerHealth - 20f;
-            f.direction = f.direction * -1;
+            f.direction = f.direction * -1; //Frosch dreht sich weg
         }
     }
 }

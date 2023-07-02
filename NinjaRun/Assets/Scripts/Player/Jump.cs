@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Autor: Paul + Lukas(animationen)
+
 public class Jump : MonoBehaviour
 {
     Rigidbody2D rb;

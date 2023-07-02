@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+//Autor: Paul + Lukas(animationen)
+
 public class Movment : MonoBehaviour
 {
     static public Vector2 move;
@@ -33,10 +35,7 @@ public class Movment : MonoBehaviour
             animator.SetBool("Run", false);
         }
 
-            transform.Translate(move * speed * Time.deltaTime);
-
-        
-
+            transform.Translate(move * speed * Time.deltaTime);  
     }
 
     

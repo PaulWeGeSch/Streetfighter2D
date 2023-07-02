@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Autor: Paul
+
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) //Wenn ESC gedrückt wurde
         {
-            if (GameIsPaused)
+            if (GameIsPaused) //Das Spiel ist Pausiert
             {
-                Resume();
+                Resume(); //Spiel geht wieder los
             }
-            else
+            else //Das Spiel läuft 
             {
-                Pause();
+                Pause(); //Spiel wird pausiert 
             }
         }
     }
